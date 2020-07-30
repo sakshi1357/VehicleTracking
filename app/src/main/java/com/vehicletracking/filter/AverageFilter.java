@@ -1,6 +1,8 @@
 package com.vehicletracking.filter;
 
-public abstract class AveragingFilter implements BaseFilter {
+import com.vehicletracking.BaseFilter;
+
+public abstract class AverageFilter implements BaseFilter {
     public static float DEFAULT_TIME_CONSTANT = 0.18f;
 
     protected float timeConstant;
@@ -8,11 +10,18 @@ public abstract class AveragingFilter implements BaseFilter {
     protected long timestamp;
     protected int count;
 
-    public AveragingFilter() {
+    public AverageFilter() {
         this(DEFAULT_TIME_CONSTANT);
     }
 
-    public AveragingFilter(float timeConstant) {
+    public AverageFilter(float timeConstant) {
         this.timeConstant = timeConstant;
         reset();
     }
+
+    public void reset() {
+        startTime = 0;
+        timestamp = 0;
+        count = 0;
+    }
+}

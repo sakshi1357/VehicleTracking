@@ -3,6 +3,8 @@ package com.vehicletracking.fusion;
 import android.hardware.SensorManager;
 import android.util.Log;
 
+import com.vehicletracking.kalman.RotationKalmanFilter;
+
 import org.apache.commons.math3.complex.Quaternion;
 
 import java.util.Arrays;
